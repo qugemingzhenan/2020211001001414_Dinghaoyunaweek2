@@ -11,11 +11,11 @@
     <title>Title</title>
 </head>
 <body>
-<form action="register.jsp" method="post">
+<form action="register" method="post">
     <table align="center">
         <tr>
             <td>UserName:</td>
-            <td><input type="text" name=name autofocus="autofocus" value="Username"></td>
+            <td><input type="text" name=username autofocus="autofocus" value="Username"></td>
         </tr>
         <tr>
             <td>Password:</td>
@@ -28,7 +28,7 @@
         <tr>
             <td>Birthday:</td>
             <td>
-                <select>
+                <select name="birthday">
                     <option>--please choose the year--</option>
                     <option>2000</option>
                     <option>2001</option>
@@ -42,7 +42,7 @@
                     <option>2009</option>
                     <option>2010</option>
                 </select>
-                <select>
+                <select name="birthday">
                     <option>--please choose the month</option>
                     <option>1</option>
                     <option>2</option>
@@ -57,7 +57,7 @@
                     <option>11</option>
                     <option>12</option>
                 </select>
-                <select>
+                <select name="birthday">
                     <option>--please choose the day</option>
                     <option>1</option>
                     <option>2</option>
@@ -95,7 +95,7 @@
         </tr>
         <tr>
             <td>area</td>
-            <td><input type="text" value="East China Jiaotong University"></td>
+            <td><input type="text" value="East China Jiaotong University" name="area"></td>
         </tr>
         <tr>
             <td>education:</td>
@@ -105,17 +105,16 @@
         </tr>
         <tr>
             <td>E-mail</td>
-            <td><input type="text" value="please write your email here"></td>
+            <td><input type="text" value="please write your email here" name="email"></td>
         </tr>
         <tr>
             <td></td>
             <td>
-                <input type="submit" value="submit">
-                <input type="reset" value="reset">
+                <input type="submit" value="submit" name="submit">
+                <input type="reset" value="reset" name="reset">
             </td>
         </tr>
     </table>
-
 </form>
 </body>
 </html>
