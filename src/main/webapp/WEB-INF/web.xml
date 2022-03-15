@@ -7,17 +7,18 @@
         <servlet-name>week2</servlet-name>
         <servlet-class>com.Dinghaoyuan.demo.exercise1</servlet-class>
     </servlet>
-    <servlet>
-        <servlet-name>RegisterServlet</servlet-name>
-        <servlet-class>com.Dinghaoyuan.demo.RegisterServlet</servlet-class>
-    </servlet>
-
     <servlet-mapping>
         <servlet-name>week2</servlet-name>
         <url-pattern>/exercise1</url-pattern>
     </servlet-mapping>
+
+    <servlet>
+        <servlet-name>Register_Servlet</servlet-name>
+        <servlet-class>com.Dinghaoyuan.week3.demo.Register_Servlet</servlet-class>
+    </servlet>
     <servlet-mapping>
-        <servlet-name>RegisterServlet</servlet-name>
+        <servlet-name>Register_Servlet</servlet-name>
         <url-pattern>/register</url-pattern>
     </servlet-mapping>
+
 </web-app>
