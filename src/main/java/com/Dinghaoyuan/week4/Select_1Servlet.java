@@ -24,11 +24,10 @@ import javax.servlet.http.HttpServletRequest;
 
 @WebServlet(name = "Select_1Servlet", value = "/Select_1Servlet" )
 public class Select_1Servlet extends HttpServlet {
-    private static String jdbcDriver = "com.mysql.cj.jdbc.Driver";// mysql连接驱动,无需改
-
+    private static String jdbcDriver = "com.mysql.cj.jdbc.Driver";
     public static String jdbcUrl = "jdbc:mysql://localhost:3306/userdb?serverTimezone=UTC";
-    public static String jdbcUser = "root";//数据库用户名
-    public static String jdbcPwd = "123456";//数据库密码
+    public static String jdbcUser = "root";
+    public static String jdbcPwd = "123456";
     private static Connection conn;
     public static Statement st;
 

@@ -36,7 +36,7 @@ public class JDBCDemoServlet extends HttpServlet {
 //        String username = config.getInitParameter("username");
 //        String password = config.getInitParameter("password");
 
-/*       ServletContext context= getServletContext();
+       ServletContext context= getServletContext();
         String driver = context.getInitParameter("driver");
         String username = context.getInitParameter("username");
         String url = context.getInitParameter("url");
@@ -48,7 +48,7 @@ public class JDBCDemoServlet extends HttpServlet {
             System.out.println(con);
         }catch (ClassNotFoundException| SQLException e){
             e.printStackTrace();
-        }*/
+        }
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -61,7 +61,7 @@ public class JDBCDemoServlet extends HttpServlet {
 
     }
 
-    /*   @Override
+      @Override
     public void destroy() {
         super.destroy();
         try {
@@ -69,5 +69,5 @@ public class JDBCDemoServlet extends HttpServlet {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-    }*/
+    }
 }

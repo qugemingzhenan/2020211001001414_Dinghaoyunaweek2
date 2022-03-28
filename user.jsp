@@ -5,10 +5,9 @@
   Time: 15:59
   To change this template use File | Settings | File Templates.
 --%>
+
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@ page language="java" import="java.sql.*,java.io.*,java.util.*"%>
-
 <html>
 <head>
     <title>Select all from usertable</title>
@@ -40,10 +39,6 @@ in which the El expression and JSTL tag are used to obtain the attribute data of
     </c:forEach>
     </table>
 </form>
-<%--<%
-    rs.close();
-    statement.close();
-    connection.close();
-%>--%>
 </body>
 </html>
+<%@include file=""%>
