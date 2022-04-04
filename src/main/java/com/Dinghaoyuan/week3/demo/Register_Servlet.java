@@ -15,24 +15,25 @@ public class Register_Servlet extends HttpServlet {
     Connection con = null;
     @Override
     public void init() throws ServletException {
-
-        ServletContext context= getServletContext();
-        String driver = context.getInitParameter("driver");
-        String username = context.getInitParameter("username");
-        String url = context.getInitParameter("url");
-        String password = context.getInitParameter("password");
-        try {
-            Class.forName(driver);
-            con = DriverManager.getConnection(url, username, password);
-            System.out.println(con);
-        }catch (ClassNotFoundException| SQLException e){
-            e.printStackTrace();
-        }
+//
+//        ServletContext context= getServletContext();
+//        String driver = context.getInitParameter("driver");
+//        String username = context.getInitParameter("username");
+//        String url = context.getInitParameter("url");
+//        String password = context.getInitParameter("password");
+//        try {
+//            Class.forName(driver);
+//            con = DriverManager.getConnection(url, username, password);
+//            System.out.println(con);
+//        }catch (ClassNotFoundException| SQLException e){
+//            e.printStackTrace();
+//        }
+        con = (Connection)getServletContext().getAttribute("con");
     }
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+        doPost(request, response);
     }
 
     @Override
@@ -46,7 +47,7 @@ public class Register_Servlet extends HttpServlet {
         String birthday = request.getParameter("birthday");
 
         System.out.println("in dopost");
-        PrintWriter writer= response.getWriter();
+        /*PrintWriter writer= response.getWriter();
         writer.println("<br>id"+id);
         writer.println("<br>username"+username);
         writer.println("<br>password"+password);
@@ -54,13 +55,16 @@ public class Register_Servlet extends HttpServlet {
         writer.println("<br>male"+male);
         writer.println("female"+female);
         writer.println("<br>birthday"+birthday);
-        writer.close();
+        writer.close();*/
 
         try{
             PreparedStatement ps=con.prepareStatement("insert into usertable values('"+id+"','"+username+"','"+password+"','"+email+"','"+male+"','"+female+"','"+birthday+"')") ;
             ps.executeLargeUpdate();
             ps.close();
             con.close();
+
+            response.sendRedirect("login.jsp");
+
         } catch (SQLException e) {
             e.printStackTrace();
         }

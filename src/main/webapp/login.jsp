@@ -12,8 +12,14 @@
     <title>Title</title>
 </head>
 <body>
+<%
+    if(!(request.getAttribute("message")==null)){
+        out.print(request.getAttribute("message"));
+    }
+%>
 <form method="post" action="Login">
     <h4>Login</h4>
+
     <table>
         <tr>
             <td>username:</td>

@@ -9,8 +9,9 @@ import java.sql.*;
 
 @WebServlet(name = "LoginServlet", value = "/Login")
 public class LoginServlet extends HttpServlet {
-
-    private static String jdbcDriver = "com.mysql.cj.jdbc.Driver";// mysql连接驱动,无需改
+    Connection con = null;
+    Statement st = null;
+/*    private static String jdbcDriver = "com.mysql.cj.jdbc.Driver";// mysql连接驱动,无需改
     public static String jdbcUrl = "jdbc:mysql://localhost:3306/userdb?serverTimezone=UTC";
     public static String jdbcUser = "root";//数据库用户名
     public static String jdbcPwd = "123456";//数据库密码
@@ -26,11 +27,17 @@ public class LoginServlet extends HttpServlet {
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }*/
+
+    @Override
+    public void init() throws ServletException {
+        con =(Connection) getServletContext().getAttribute("con");
+        st = (Statement) getServletContext().getAttribute("st");
     }
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+        doPost(request, response);
     }
 
     @Override
@@ -42,8 +49,16 @@ public class LoginServlet extends HttpServlet {
             String sql = "select * from usertable where username='" + username + "' and password= '" + password + "'";
             ResultSet rs = st.executeQuery(sql);
             if (rs.next()) {
-                request.setAttribute("remind",username);
-                request.getRequestDispatcher("loginpass.jsp").forward(request, response);
+                //request.setAttribute("remind",username);
+                //request.getRequestDispatcher("loginpass.jsp").forward(request, response);
+                request.setAttribute("id",rs.getInt("id"));
+                request.setAttribute("username",rs.getString("username"));
+                request.setAttribute("password",rs.getString("password"));
+                request.setAttribute("email",rs.getString("email"));
+                request.setAttribute("male",rs.getString("male"));
+                request.setAttribute("female",rs.getString("female"));
+                request.setAttribute("birthday",rs.getDate("birthday"));
+                request.getRequestDispatcher("userinfo.jsp").forward(request,response);
             } else {
                 request.setAttribute("message", "账密错误，请重新登录<br>");
                 request.getRequestDispatcher("login.jsp").forward(request, response);
