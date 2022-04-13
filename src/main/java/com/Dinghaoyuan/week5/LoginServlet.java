@@ -1,5 +1,8 @@
 package com.Dinghaoyuan.week5;
 
+import com.Dinghaoyuan.dao.UserDao;
+import com.Dinghaoyuan.model.User;
+
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
@@ -7,7 +10,7 @@ import java.io.IOException;
 import java.sql.*;
 
 
-@WebServlet(name = "LoginServlet", value = "/Login")
+@WebServlet(name = "LoginServlet", value = "/login")
 public class LoginServlet extends HttpServlet {
     Connection con = null;
     Statement st = null;
@@ -38,6 +41,7 @@ public class LoginServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         doPost(request, response);
+        request.getRequestDispatcher("WEB-INF/views/login.jsp").forward(request,response);
     }
 
     @Override
@@ -45,7 +49,23 @@ public class LoginServlet extends HttpServlet {
         request.setCharacterEncoding("utf-8");
         String username = request.getParameter("username");
         String password = request.getParameter("password");
+
+        UserDao userDao = new UserDao();
         try {
+            User user = userDao.findByUsernamePassword(con,username,password);
+            if(user !=null){
+                request.setAttribute("user",user);
+                request.getRequestDispatcher("WEB-INF/views/userinfo.jsp").forward(request,response);
+            }else {
+                request.setAttribute("message", "账密错误，请重新登录<br>");
+                request.getRequestDispatcher("WEB-INF/views/login.jsp").forward(request, response);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+
+        /*try {
             String sql = "select * from usertable where username='" + username + "' and password= '" + password + "'";
             ResultSet rs = st.executeQuery(sql);
             if (rs.next()) {
@@ -67,7 +87,7 @@ public class LoginServlet extends HttpServlet {
 
         }catch (SQLException e) {
             e.printStackTrace();
-        }
+        }*/
 
     }
 }
