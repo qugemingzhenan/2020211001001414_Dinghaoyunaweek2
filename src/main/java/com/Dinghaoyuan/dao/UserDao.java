@@ -55,16 +55,18 @@ public class UserDao implements IUserDao{
         String male = user.getMale();
         String female = user.getFemale();
         Date birthday = user.getBirthday();
+        int rs = 0;
         try {
             String sql = "update usertable set email=? where id = ?";
             PreparedStatement ps = con.prepareStatement(sql);
             ps.executeUpdate();
+            rs= ps.executeUpdate();
             con.close();
             ps.close();
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        return 0;
+        return rs;
     }
 
     @Override
