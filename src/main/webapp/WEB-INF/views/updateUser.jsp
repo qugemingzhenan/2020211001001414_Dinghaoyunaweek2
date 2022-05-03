@@ -32,7 +32,7 @@
         <tr>
             <td>gender</td>
             <td>
-                <input type="radio" name="<%=u.getMale()%>">male <input type="radio" name="<%=u.getFemale()%>">female
+                <input type="radio" name="<%=u.getGender()%>">
             </td>
         </tr>
         <tr>

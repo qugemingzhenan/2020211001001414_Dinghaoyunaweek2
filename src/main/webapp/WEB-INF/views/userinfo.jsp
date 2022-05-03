@@ -25,8 +25,7 @@
         <td>username:</td><td><%=u.getUsername()%></td>
         <td>password</td><td><%=u.getPassword()%></td>
         <td>email:</td><td><%=u.getEmail()%></td>
-        <td>male:</td><td><%=u.getMale()%></td>
-        <td>female:</td><td><%=u.getFemale()%></td>
+        <td>male:</td><td><%=u.getGender()%></td>
         <td>birthday:</td><td><%=u.getBirthday()%></td>
         <td><a href="updateUser">Update</a></td>
     </tr>

@@ -34,7 +34,7 @@ public class LoginServlet extends HttpServlet {
 
     @Override
     public void init() throws ServletException {
-        con =(Connection) getServletContext().getAttribute("con");
+        con = (Connection)getServletContext().getAttribute("con");
         st = (Statement) getServletContext().getAttribute("st");
     }
 

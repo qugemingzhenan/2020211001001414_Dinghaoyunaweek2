@@ -33,7 +33,7 @@ public class Register_Servlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        doPost(request, response);
+        request.getRequestDispatcher("WEB-INF/views/register.jsp").forward(request,response);
     }
 
     @Override
@@ -42,8 +42,7 @@ public class Register_Servlet extends HttpServlet {
         String username = request.getParameter("username");
         String password = request.getParameter("password");
         String email = request.getParameter("email");
-        String male = request.getParameter("male");
-        String female = request.getParameter("female");
+        String gender = request.getParameter("gender");
         String birthday = request.getParameter("birthday");
 
         System.out.println("in dopost");
@@ -58,12 +57,12 @@ public class Register_Servlet extends HttpServlet {
         writer.close();*/
 
         try{
-            PreparedStatement ps=con.prepareStatement("insert into usertable values('"+id+"','"+username+"','"+password+"','"+email+"','"+male+"','"+female+"','"+birthday+"')") ;
+            PreparedStatement ps=con.prepareStatement("insert into usertable values('"+id+"','"+username+"','"+password+"','"+email+"','"+gender+"','"+birthday+"')") ;
             ps.executeLargeUpdate();
             ps.close();
             con.close();
 
-            response.sendRedirect("login.jsp");
+            response.sendRedirect("login");
 
         } catch (SQLException e) {
             e.printStackTrace();

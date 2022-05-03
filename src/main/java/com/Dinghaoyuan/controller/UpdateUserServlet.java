@@ -36,8 +36,7 @@ public class UpdateUserServlet extends HttpServlet {
         String username = request.getParameter("username");
         String password = request.getParameter("password");
         String email = request.getParameter("email");
-        String male = request.getParameter("male");
-        String female = request.getParameter("female");
+        String gender = request.getParameter("gender");
         String birthday = request.getParameter("birthday");
         try{
             Date birth = new SimpleDateFormat("yyyy-MM-dd").parse(birthday);
@@ -45,8 +44,7 @@ public class UpdateUserServlet extends HttpServlet {
             user.setUsername(username);
             user.setPassword(password);
             user.setEmail(email);
-            user.setMale(male);
-            user.setFemale(female);
+            user.setGender(gender);
             user.setBirthday(birth);
         } catch (Exception e) {
             e.printStackTrace();

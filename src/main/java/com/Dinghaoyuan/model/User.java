@@ -9,20 +9,18 @@ public class User {
     private String username;
     private String password;
     private String email;
-    private String male;
-    private String female;
+    private String gender;
     private Date birthday;
 
     public User() {
     }
 
-    public User(int id, String username, String password, String email, String male, String female, Date birthday) {
+    public User(int id, String username, String password, String email, String gender, Date birthday) {
         this.id = id;
         this.username = username;
         this.password = password;
         this.email = email;
-        this.male = male;
-        this.female = female;
+        this.gender =gender;
         this.birthday = birthday;
     }
 
@@ -58,21 +56,14 @@ public class User {
         this.email = email;
     }
 
-    public String getMale() {
-        return male;
+    public String getGender() {
+        return gender;
     }
 
-    public void setMale(String male) {
-        this.male = male;
+    public void setGender(String gender) {
+        this.gender= gender;
     }
 
-    public String getFemale() {
-        return female;
-    }
-
-    public void setFemale(String female) {
-        this.female = female;
-    }
 
     public Date getBirthday() {
         return birthday;
@@ -81,7 +72,6 @@ public class User {
     public void setBirthday(Date birthday) {
         this.birthday = birthday;
     }
-
     @Override
     public String toString() {
         return "User{" +
@@ -89,9 +79,10 @@ public class User {
                 ", username='" + username + '\'' +
                 ", password='" + password + '\'' +
                 ", email='" + email + '\'' +
-                ", male='" + male + '\'' +
-                ", female='" + female + '\'' +
+                ", gender='" + gender + '\'' +
                 ", birthday=" + birthday +
                 '}';
     }
+
+
 }
