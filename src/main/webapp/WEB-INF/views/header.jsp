@@ -133,7 +133,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 										<li><a href="<%=basePath%>myCart">Cart</a></li> 
 										<li><a href="<%=basePath%>order">Order</a></li>
 										
-										<%-- <li><a href="<%=basePath%>login">Login</a></li>  --%>
+										<li><a href="<%=basePath%>login">Login</a></li>
                                     </ul>
                                 </li> 
 								
