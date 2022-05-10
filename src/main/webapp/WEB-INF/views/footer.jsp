@@ -154,7 +154,7 @@ String basePath1 = request.getScheme()+"://"+request.getServerName()+":"+request
 			<div class="container">
 				<div class="row">
 					<p class="pull-left">Copyright © 2013 ecjtu All rights reserved.</p>
-					<p class="pull-left" style="width: 178px; margin-left: 300px; " >Are you admin?<a href='<%=basePath1+"admin/home"%>'>Click Here</a></p>
+					<p class="pull-left" style="width: 178px; margin-left: 300px; " >Are you admin?<a href='<%=basePath1+"/admin/home"%>'>Click Here</a></p>
 					<p class="pull-right">Designed by <span><a target="_blank" href="http://www.ecjtu.jx.cn/">ECJTU</a></span></p>
 				</div>
 			</div>

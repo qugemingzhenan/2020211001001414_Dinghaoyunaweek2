@@ -21,19 +21,26 @@
 	    				<div class="status alert alert-success" style="display: none"></div>
 				    	<form id="main-contact-form" class="contact-form row" name="contact-form" method="post" enctype="multipart/form-data" action="<%=basePath %>admin/addProduct">
 				            <div class="form-group col-md-6">
-				                <input type="text" name="productName" class="form-control" required="required" placeholder="Product Name">
+				                <input type="text" name="ProductName" class="form-control" required="required" placeholder="Product Name">
 				            </div>
 				            <div class="form-group col-md-6">
 				                <input type="text" name="price" class="form-control" required="required" placeholder="Price">
 				            </div>
 				            <div class="form-group col-md-6">
-				               	<select name="categoryId">
+				               	<select name="categoryID">
 										<option >-- Category --</option>
 											<!-- loop_start -->
 											
-										<option value=""></option>
-										
-										<!-- loop_end -->
+										<option value="1">FASHION</option>
+										<option value="2">HOUSEHOLDS</option>
+										<option value="3">INTERRIORS</option>
+										<option value="4">CLOTHING</option>
+										<option value="5">BAGES</option>
+										<option value="6">SHOES</option>
+										<option value="7">BOOKS</option>
+										<option value="8">OTHERS</option>
+
+									<!-- loop_end -->
 										
 										</select>
 				            </div>
@@ -42,7 +49,7 @@
 				            </div>
 				         
 				            <div class="form-group col-md-12">
-				                <textarea name="productDescription" id="message"  class="form-control" cols="8" rows="8" placeholder="Product Description Here"></textarea>
+				                <textarea name="ProductDescription" id="message"  class="form-control" cols="8" rows="8" placeholder="Product Description Here"></textarea>
 				            </div>                        
 				            <div class="form-group col-md-12">
 				                <input type="submit" name="submit" class="btn btn-primary pull-right" value="Submit">
