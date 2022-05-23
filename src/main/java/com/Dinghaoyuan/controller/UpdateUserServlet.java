@@ -58,7 +58,7 @@ public class UpdateUserServlet extends HttpServlet {
                 request.getRequestDispatcher("WEB-INF/views/userinfo.jsp").forward(request,response);
             }else {
                 request.setAttribute("message", "修改失败<br>");
-                request.getRequestDispatcher("WEB-INF/views/updateUser.jsp").forward(request, response);
+                request.getRequestDispatcher("accountDetails").forward(request, response);
             }
         } catch (SQLException e) {
             e.printStackTrace();

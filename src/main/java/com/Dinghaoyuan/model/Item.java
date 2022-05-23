@@ -2,14 +2,14 @@ package com.Dinghaoyuan.model;
 
 public class Item {
     private Product product;
-    private int qunatity;
+    private int quantity;
     public Item(){
 
     }
 
     public Item(Product product, int qunatity) {
         this.product = product;
-        this.qunatity = qunatity;
+        this.quantity = qunatity;
     }
 
     public Product getProduct() {
@@ -20,19 +20,19 @@ public class Item {
         this.product = product;
     }
 
-    public int getQunatity() {
-        return qunatity;
+    public int getQuantity() {
+        return quantity;
     }
 
-    public void setQunatity(int qunatity) {
-        this.qunatity = qunatity;
+    public void setQuantity(int qunatity) {
+        this.quantity = qunatity;
     }
 
     @Override
     public String toString() {
         return "Item{" +
                 "product=" + product +
-                ", qunatity=" + qunatity +
+                ", qunatity=" + quantity +
                 '}';
     }
 }
