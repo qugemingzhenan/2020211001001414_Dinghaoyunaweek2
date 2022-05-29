@@ -68,8 +68,8 @@ public class CartServlet extends HttpServlet {
                 Product p =productDao.findById(id,con);
                 cart.add(new Item(p,1));
             }else {
-                int newQunatity = cart.get(index).getQunatity()+1;
-                cart.get(index).setQunatity(newQunatity);
+                int newQunatity = cart.get(index).getQuantity()+1;
+                cart.get(index).setQuantity(newQunatity);
             }
             session.setAttribute("cart",cart);
         }

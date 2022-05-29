@@ -11,7 +11,7 @@ import java.io.IOException;
 import java.sql.Connection;
 import java.util.List;
 
-@WebServlet("OrderDetails")
+@WebServlet("/OrderDetails")
 public class OrderDetailsServlet extends HttpServlet {
     Connection con =null;
 

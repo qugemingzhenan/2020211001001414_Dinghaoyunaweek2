@@ -130,5 +130,23 @@
         <url-pattern>/hello</url-pattern>
     </filter-mapping>
 
+    <filter>
+        <filter-name>LoginFilter</filter-name>
+        <filter-class>com.Lab2.LoginFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>LoginFilter</filter-name>
+        <url-pattern>/loginhello</url-pattern>
+    </filter-mapping>
+
+    <filter>
+        <filter-name>DinghaoyuanFilter</filter-name>
+        <filter-class>com.Lab2.DinghaoyuanFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>DinghaoyuanFilter</filter-name>
+        <url-pattern>/dhy</url-pattern>
+    </filter-mapping>
+
 
 </web-app>
