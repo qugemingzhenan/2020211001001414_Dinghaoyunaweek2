@@ -148,5 +148,13 @@
         <url-pattern>/dhy</url-pattern>
     </filter-mapping>
 
+    <!--servlet>
+        <servlet-name>calservlet</servlet-name>
+        <servlet-class>com.Lab3.CalServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>calservlet</servlet-name>
+        <url-pattern>/CalServlet</url-pattern>
+    </servlet-mapping>-->
 
 </web-app>
